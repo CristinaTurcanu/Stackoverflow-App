@@ -1,7 +1,10 @@
-import { required } from "vee-validate/dist/rules";
-import { extend } from "vee-validate";
+import { extend, localize } from "vee-validate";
+import { min, required } from "vee-validate/dist/rules";
+import en from "vee-validate/dist/locale/en.json";
 
-extend("required", {
-  ...required,
-  message: "This field is required"
+extend("required", required);
+extend("min", min);
+
+localize({
+  en
 });
