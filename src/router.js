@@ -6,6 +6,7 @@ import UserDetails from "./views/UserDetails";
 import QuestionDetails from "./views/QuestionDetails";
 import QuestionForm from "./views/QuestionForm";
 import Tags from "./views/Tags";
+import SignUp from './views/SignUp';
 
 Vue.use(Router);
 
@@ -62,6 +63,11 @@ export default new Router({
       path: "/tags",
       name: "tags",
       component: Tags
+    },
+    {
+      path: "/signup",
+      name: "signup",
+      component: SignUp
     }
   ]
 });

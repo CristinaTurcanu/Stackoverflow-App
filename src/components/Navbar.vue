@@ -11,20 +11,19 @@
           :key="chip.text"
           color="warning"
           class="mx-3 d-none d-md-block"
-          >{{ chip.text }}</v-chip
-        >
+        >{{ chip.text }}</v-chip>
       </v-chip-group>
-      <b-form-input
-        size="sm"
-        class="col-md-3 d-none d-flex"
-        placeholder="Search"
-      ></b-form-input>
+      <b-form-input size="sm" class="col-md-3 d-none d-flex" placeholder="Search"></b-form-input>
       <v-spacer />
       <div class="my-2">
         <v-btn text small color="primary">Log in</v-btn>
       </div>
       <div class="my-2">
-        <v-btn small color="primary">Sign in</v-btn>
+        <router-link router :to="{ name: 'signup'}">
+          <span>
+            <v-btn small color="primary">Sign in</v-btn>
+          </span>
+        </router-link>
       </div>
     </v-app-bar>
 
