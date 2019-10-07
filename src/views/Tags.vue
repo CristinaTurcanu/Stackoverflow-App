@@ -10,7 +10,7 @@ import { mapActions, mapGetters } from "vuex";
 export default {
   name: "Tags",
   components: { QuestionTags },
-  data() {
+  data () {
     return {};
   },
   computed: {
@@ -18,7 +18,7 @@ export default {
       tags: "tags/getTags"
     })
   },
-  async created() {
+  async created () {
     await this.getTagsAction();
   },
   methods: {

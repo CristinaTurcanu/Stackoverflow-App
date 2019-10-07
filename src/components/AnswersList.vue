@@ -9,7 +9,7 @@
               <v-col>
                 <v-card v-for="answer in answers" :key="answer.id" flat>
                   <v-card-text>
-                    <div>Answered {{ answer.creation_date | moment }}</div>
+                    <div>Answered {{ answer.creation_date | toDateFormat }}</div>
                     <div>
                       <router-link
                         :to="{
@@ -39,21 +39,14 @@
   </div>
 </template>
 <script>
-import moment from "moment";
 export default {
-  filters: {
-    moment: function(date) {
-      return moment(date).format("MMM Do YYYY");
-    }
-  },
   props: {
     answers: {
       type: Array,
-      default: null
+      default() {
+        return [];
+      }
     }
-  },
-  data() {
-    return {};
   }
 };
 </script>

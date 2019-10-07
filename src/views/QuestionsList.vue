@@ -1,8 +1,12 @@
 <template>
   <div>
     <div class="d-flex justify-space-between mb-3">
-      <h1 class="headline">Questions</h1>
-      <v-btn color="primary" @click="navigate">Ask a Question</v-btn>
+      <h1 class="headline">
+Questions
+</h1>
+      <v-btn color="primary" @click="navigate">
+Ask a Question
+</v-btn>
     </div>
     <v-layout column wrap>
       <v-flex v-for="question in questions" :key="question.id">
@@ -60,7 +64,7 @@ import QuestionStatistics from "../components/QuestionStatistics";
 export default {
   components: { UserInfo, QuestionStatistics },
   filters: {
-    truncate: function(value) {
+    truncate: function (value) {
       if (value.length > 210) {
         value = value.substring(0, 209) + "...";
       }
@@ -70,7 +74,9 @@ export default {
   props: {
     questions: {
       type: Array,
-      default: null
+      default () {
+        return [];
+      }
     },
     page: {
       type: Number,
@@ -81,14 +87,14 @@ export default {
       default: 0
     }
   },
-  data() {
+  data () {
     return {};
   },
   methods: {
-    navigate() {
+    navigate () {
       this.$emit("navigate");
     },
-    getQuestions() {
+    getQuestions () {
       this.$emit("get-questions");
     }
   }

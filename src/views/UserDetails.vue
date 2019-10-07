@@ -29,7 +29,9 @@
                 }}</v-btn>
               </v-col>
               <v-col>
-                <v-btn outlined text>{{ user.badge_counts.silver }}</v-btn>
+                <v-btn outlined text>
+{{ user.badge_counts.silver }}
+</v-btn>
               </v-col>
               <v-col>
                 <v-btn outlined text color="brown">{{
@@ -98,7 +100,7 @@ import moment from "moment";
 export default {
   name: "UserDetails",
   filters: {
-    moment: function(date) {
+    moment: function (date) {
       return moment(date).format("MMM Do YYYY");
     }
   },
@@ -108,7 +110,7 @@ export default {
       default: 0
     }
   },
-  data() {
+  data () {
     return {
       user: {}
     };
@@ -118,7 +120,7 @@ export default {
       getUserById: "users/getUserById"
     })
   },
-  async created() {
+  async created () {
     this.user = this.getUserById(this.id);
   }
 };

@@ -7,7 +7,7 @@ export default {
     users: []
   },
   actions: {
-    async getUsersAction({ commit }) {
+    async getUsersAction ({ commit }) {
       const users = await dataService.getUsers();
       commit(GET_USERS, users);
     }
@@ -17,7 +17,7 @@ export default {
     getUsers: state => state.users
   },
   mutations: {
-    [GET_USERS](state, users) {
+    [GET_USERS] (state, users) {
       state.users = users;
     }
   }

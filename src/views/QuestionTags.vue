@@ -6,7 +6,9 @@
         <v-list-item v-for="tag in tags" :key="tag.name">
           <v-list-item-content>
             <v-list-item-title>
-              <v-btn small>{{ tag.name }}</v-btn>
+              <v-btn small>
+{{ tag.name }}
+</v-btn>
               x {{ tag.count }}
             </v-list-item-title>
           </v-list-item-content>
@@ -21,7 +23,9 @@ export default {
   props: {
     tags: {
       type: Array,
-      default: null
+      default () {
+        return [];
+      }
     }
   }
 };

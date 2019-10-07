@@ -1,6 +1,6 @@
 import API from "../api/api";
 
-const getUsers = async function() {
+const getUsers = async function () {
   try {
     const response = await API.get("/users");
     return response.data;
@@ -9,7 +9,7 @@ const getUsers = async function() {
   }
 };
 
-const getUserById = async function(id) {
+const getUserById = async function (id) {
   try {
     const response = await API.get(`/users/${id}`);
     return response.data;
@@ -18,7 +18,7 @@ const getUserById = async function(id) {
   }
 };
 
-const getQuestions = async function(params) {
+const getQuestions = async function (params) {
   try {
     const response = await API.get("/questions", { params });
     return response.data;
@@ -27,7 +27,7 @@ const getQuestions = async function(params) {
   }
 };
 
-const getQuestionById = async function(id) {
+const getQuestionById = async function (id) {
   try {
     const response = await API.get(`/question/${id}`);
     return response.data;
@@ -36,7 +36,7 @@ const getQuestionById = async function(id) {
   }
 };
 
-const addQuestion = async function(params) {
+const addQuestion = async function (params) {
   try {
     const response = await API.post("/questions", params);
     return response.data;
@@ -45,7 +45,7 @@ const addQuestion = async function(params) {
   }
 };
 
-const getTags = async function(params) {
+const getTags = async function (params) {
   try {
     const response = await API.get("/tags", { params });
     return response.data;
@@ -54,7 +54,7 @@ const getTags = async function(params) {
   }
 };
 
-const getAnswers = async function() {
+const getAnswers = async function () {
   try {
     const response = await API.get("/answers");
     return response.data;

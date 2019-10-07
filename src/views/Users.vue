@@ -1,6 +1,8 @@
 <template>
   <div class="pa-5 my-5">
-    <h1 class="headline">Users</h1>
+    <h1 class="headline">
+Users
+</h1>
     <v-text-field
       v-model="search"
       solo
@@ -17,19 +19,17 @@
             </v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title class="app-title mb-1">
-                <router-link
-                  class="link"
-                  :to="{ name: 'user', params: { id: user.id } }"
-                >
+                <router-link class="link" :to="{ name: 'user', params: { id: user.id } }">
                   <span v-html="user.display_name"></span>
                 </router-link>
               </v-list-item-title>
-              <v-list-item-subtitle
-                v-if="user.location"
-                v-html="user.location"
-              ></v-list-item-subtitle>
-              <v-list-item-subtitle v-else>No location</v-list-item-subtitle>
-              <div class="mb-2">{{ user.reputation }}</div>
+              <v-list-item-subtitle v-if="user.location" v-html="user.location"></v-list-item-subtitle>
+              <v-list-item-subtitle v-else>
+No location
+</v-list-item-subtitle>
+              <div class="mb-2">
+{{ user.reputation }}
+</div>
             </v-list-item-content>
           </v-list-item>
         </v-card>
@@ -43,7 +43,7 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Users",
-  data() {
+  data () {
     return {
       search: ""
     };
@@ -52,7 +52,7 @@ export default {
     ...mapGetters({
       users: "users/getUsers"
     }),
-    filteredUsers() {
+    filteredUsers () {
       return this.users.filter(user => {
         return (
           user.display_name.toLowerCase().indexOf(this.search.toLowerCase()) >
@@ -61,7 +61,7 @@ export default {
       });
     }
   },
-  async created() {
+  async created () {
     await this.getUsersAction();
   },
   methods: {

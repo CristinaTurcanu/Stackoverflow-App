@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <v-img src="../assets/background.jpeg" />
+    <v-img src="../assets/images/background.jpeg" />
   </div>
 </template>
 
@@ -9,6 +9,7 @@ export default {
   name: "Home"
 };
 </script>
+
 <style lang="scss">
 .background {
   position: fixed;

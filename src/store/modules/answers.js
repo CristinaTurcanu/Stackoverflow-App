@@ -7,7 +7,7 @@ export default {
     answers: []
   },
   actions: {
-    async getAnswersAction({ commit }) {
+    async getAnswersAction ({ commit }) {
       const answers = await dataService.getAnswers();
       commit(GET_ANSWERS, answers);
     }
@@ -18,7 +18,7 @@ export default {
     getAnswers: state => state.answers
   },
   mutations: {
-    [GET_ANSWERS](state, answers) {
+    [GET_ANSWERS] (state, answers) {
       state.answers = answers;
     }
   }

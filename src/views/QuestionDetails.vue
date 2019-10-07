@@ -1,6 +1,8 @@
 <template>
   <div class="pa-5 my-5">
-    <h1 class="title">{{ question.title }}</h1>
+    <h1 class="title">
+{{ question.title }}
+</h1>
     <v-row>
       <v-col class="col-sm-12 col-md-9">
         <v-card flat>
@@ -51,7 +53,7 @@ export default {
       default: null
     }
   },
-  data() {
+  data () {
     return {
       question: {},
       answers: {}
@@ -63,7 +65,7 @@ export default {
       getAnswersByQuestionId: "answers/getAnswersByQuestionId"
     })
   },
-  async created() {
+  async created () {
     this.question = this.getQuestionById(this.id);
     this.answers = this.getAnswersByQuestionId(this.id);
   }

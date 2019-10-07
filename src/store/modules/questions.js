@@ -7,11 +7,11 @@ export default {
     questions: []
   },
   actions: {
-    async getQuestionsAction({ commit }, params) {
+    async getQuestionsAction ({ commit }, params) {
       const questions = await dataService.getQuestions(params);
       commit(GET_QUESTIONS, questions);
     },
-    async addQuestionAction({ commit }, params) {
+    async addQuestionAction ({ commit }, params) {
       const newQuestion = await dataService.addQuestion(params);
       commit(ADD_QUESTION, newQuestion);
     }
@@ -21,10 +21,10 @@ export default {
     getQuestions: state => state.questions
   },
   mutations: {
-    [GET_QUESTIONS](state, questions) {
+    [GET_QUESTIONS] (state, questions) {
       state.questions = questions;
     },
-    [ADD_QUESTION](state, question) {
+    [ADD_QUESTION] (state, question) {
       state.questions.push(question);
     }
   }

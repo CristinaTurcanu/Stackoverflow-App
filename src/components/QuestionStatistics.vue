@@ -3,12 +3,16 @@
     <v-card flat class="text-center">
       <v-card-text>
         <div class="grey--text">
-          <div class="title">{{ question.score }}</div>
+          <div class="title">
+{{ question.score }}
+</div>
           <div>votes</div>
         </div>
 
         <div class="green--text">
-          <div class="title">{{ question.answer_count }}</div>
+          <div class="title">
+{{ question.answer_count }}
+</div>
           <div>answers</div>
         </div>
 

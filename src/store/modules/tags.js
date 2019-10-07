@@ -7,7 +7,7 @@ export default {
     tags: []
   },
   actions: {
-    async getTagsAction({ commit }, params) {
+    async getTagsAction ({ commit }, params) {
       const tags = await dataService.getTags(params);
       commit(GET_TAGS, tags);
     }
@@ -16,7 +16,7 @@ export default {
     getTags: state => state.tags
   },
   mutations: {
-    [GET_TAGS](state, tags) {
+    [GET_TAGS] (state, tags) {
       state.tags = tags;
     }
   }

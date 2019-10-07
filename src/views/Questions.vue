@@ -23,7 +23,7 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   components: { QuestionsList, QuestionTags },
-  data() {
+  data () {
     return {
       page: 1,
       limit: 7
@@ -36,7 +36,7 @@ export default {
       answers: "answers/getAnswersByQuestionId"
     })
   },
-  async created() {
+  async created () {
     await this.getQuestionsAction({ _limit: this.limit, _page: this.page });
     await this.getTagsAction({ _limit: this.limit });
     await this.getAnswersAction();
@@ -47,10 +47,10 @@ export default {
       getTagsAction: "tags/getTagsAction",
       getAnswersAction: "answers/getAnswersAction"
     }),
-    async getQuestions() {
+    async getQuestions () {
       await this.getQuestionsAction({ _limit: this.limit, _page: this.page });
     },
-    goToQuestionForm() {
+    goToQuestionForm () {
       this.$router.push({ name: "questionForm" });
     }
   }
